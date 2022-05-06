@@ -5420,7 +5420,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "PostalCode",
   props: {
-    modelValue: String
+    value: String
   },
   data: function data() {
     return {
@@ -5429,7 +5429,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   watch: {
     // watching prop
-    modelValue: {
+    value: {
       handler: function handler(newValue) {
         if (newValue) {
           this.postalCode = newValue;
@@ -5440,7 +5440,7 @@ __webpack_require__.r(__webpack_exports__);
     // watching data() property
     postalCode: {
       handler: function handler(newValue, old) {
-        this.$emit('update:modelValue', newValue);
+        this.$emit('input', newValue);
       },
       immediate: true
     }

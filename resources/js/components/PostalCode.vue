@@ -15,7 +15,7 @@ export default {
     name: "PostalCode",
 
     props: {
-        modelValue: String,
+        value: String,
     },
 
     data() {
@@ -26,7 +26,7 @@ export default {
 
     watch: {
         // watching prop
-        modelValue: {
+        value: {
             handler: function (newValue) {
                 if (newValue) {
                     this.postalCode = newValue;
@@ -38,7 +38,7 @@ export default {
         // watching data() property
         postalCode: {
             handler: function (newValue, old) {
-                this.$emit('update:modelValue', newValue)
+                this.$emit('input', newValue)
             },
             immediate: true
         }
